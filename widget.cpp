@@ -1,6 +1,11 @@
 #include "widget.h"
 #include "ui_widget.h"
 #include<QPushButton>
+#include<QTextEdit>
+#include<QLineEdit>
+#include<QLabel>
+#include<QVBoxLayout>
+
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
@@ -12,13 +17,16 @@ Widget::Widget(QWidget *parent) :
     testbutton1->setGeometry(20,20,100,20);
     testbutton1->setText("Knopf1");
 
-    QPushButton *testbutton2 = new QPushButton(this);
-    testbutton2->setGeometry(120,20,100,20);
-    testbutton2->setText("Knopf2");
+    QTextEdit *Textfeld = new QTextEdit(this);
+    Textfeld->setGeometry(20,70,100,20);
 
-    QPushButton *testbutton3 = new QPushButton(this);
-    testbutton3->setGeometry(220,20,100,20);
-    testbutton3->setText("Knopf3");
+    QLineEdit *LineEdit = new QLineEdit(this);
+    LineEdit->setGeometry(20,120,100,20);
+
+    QLabel *Label = new QLabel(this);
+    Label->setGeometry(20,170,100,20);
+    Label->setText("Hallo");
+
 
 }
 
@@ -26,3 +34,7 @@ Widget::~Widget()
 {
     delete ui;
 }
+
+
+
+
