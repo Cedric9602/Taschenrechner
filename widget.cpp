@@ -12,6 +12,3 @@ Widget::~Widget()
 {
     delete ui;
 }
-
-
-//test
