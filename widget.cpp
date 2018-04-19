@@ -1,33 +1,27 @@
 #include "widget.h"
-#include "ui_widget.h"
-#include<QPushButton>
-#include<QTextEdit>
-#include<QLineEdit>
-#include<QLabel>
-#include<QVBoxLayout>
 
 
-Widget::Widget(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Widget)
+Widget::Widget():ui(new Ui::Widget)
 {
     ui->setupUi(this);
 
-    QPushButton *testbutton1 = new QPushButton(this);
-    testbutton1->setGeometry(20,20,100,20);
-    testbutton1->setText("Knopf1");
+    vbox=new QVBoxLayout;
+    vbox->setSpacing(1);
 
-    QTextEdit *Textfeld = new QTextEdit(this);
-    Textfeld->setGeometry(20,70,100,20);
+    ledit=new QLineEdit(this);
+    ledit->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 
-    QLineEdit *LineEdit = new QLineEdit(this);
-    LineEdit->setGeometry(20,120,100,20);
+    text=new QLabel(this);
+    text->setText("Ausgabe");
+    text->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 
-    QLabel *Label = new QLabel(this);
-    Label->setGeometry(20,170,100,20);
-    Label->setText("Hallo");
-//asdasd
+    neuerknopf=new QPushButton("Test",this);
+    neuerknopf->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 
+    vbox->addWidget(ledit);
+    vbox->addWidget(text);
+    vbox->addWidget(neuerknopf);
+    setLayout(vbox);
 
 }
 
