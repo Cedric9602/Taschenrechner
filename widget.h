@@ -8,7 +8,8 @@
 #include<QTextEdit>
 #include<QLineEdit>
 #include<QLabel>
-#include<QVBoxLayout>
+#include<QGridLayout>
+
 
 namespace Ui {
 class Widget;
@@ -18,10 +19,21 @@ class Widget : public QWidget{
 
     Q_OBJECT
 
-    private:    QVBoxLayout *vbox;
-                QLineEdit *ledit;
-                QLabel *text;
-                QPushButton *neuerknopf;
+    private:    QLineEdit *Eingabetext;
+                QLabel *text1;
+
+                QGridLayout *layout;
+
+                QPushButton *zahl1;
+                QPushButton *zahl2;
+                QPushButton *zahl3;
+                QPushButton *zahl4;
+                QPushButton *zahl5;
+                QPushButton *zahl6;
+                QPushButton *zahl7;
+                QPushButton *zahl8;
+                QPushButton *zahl9;
+
                 Ui::Widget *ui;
 
     public:     Widget();
