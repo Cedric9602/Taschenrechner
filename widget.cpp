@@ -26,6 +26,7 @@ Widget::Widget(QWidget *parent) :
     QLabel *Label = new QLabel(this);
     Label->setGeometry(20,170,100,20);
     Label->setText("Hallo");
+//asdasd
 
 
 }
