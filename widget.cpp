@@ -53,9 +53,17 @@ Widget::Widget():ui(new Ui::Widget)
 
     komma = Colored_Button(",", QColor(Qt::gray));
 
+<<<<<<< HEAD
     add = Colored_Button("+", QColor(Qt::gray));
 
     sub = Colored_Button("-", QColor(Qt::gray));
+=======
+    QLabel *Label = new QLabel(this);
+    Label->setGeometry(20,170,100,20);
+    Label->setText("Hallo");
+//asdasd
+//test
+>>>>>>> test
 
     mult = Colored_Button("*", QColor(Qt::gray));
 
