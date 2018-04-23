@@ -10,6 +10,8 @@
 #include<QLabel>
 #include<QGridLayout>
 
+QPushButton *Colored_Button(QString text, QColor color);
+
 
 namespace Ui {
 class Widget;
@@ -20,10 +22,11 @@ class Widget : public QWidget{
     Q_OBJECT
 
     private:    QLineEdit *Eingabetext;
-                QLabel *text1;
+                QLabel *Ausgabe;
 
                 QGridLayout *layout;
 
+                QPushButton *zahl0;
                 QPushButton *zahl1;
                 QPushButton *zahl2;
                 QPushButton *zahl3;
@@ -33,6 +36,19 @@ class Widget : public QWidget{
                 QPushButton *zahl7;
                 QPushButton *zahl8;
                 QPushButton *zahl9;
+
+                QPushButton *DEL;
+                QPushButton *AC;
+                QPushButton *k_auf;
+                QPushButton *k_zu;
+                QPushButton *wurzel;
+                QPushButton *potenz;
+                QPushButton *komma;
+                QPushButton *add;
+                QPushButton *sub;
+                QPushButton *mult;
+                QPushButton *div;
+                QPushButton *calc;
 
                 Ui::Widget *ui;
 
