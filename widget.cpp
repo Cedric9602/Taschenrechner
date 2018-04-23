@@ -10,9 +10,11 @@ Widget::Widget():ui(new Ui::Widget)
     Eingabetext=new QLineEdit();
     Eingabetext->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 
-    Ausgabe=new QLabel();
-    Ausgabe->setText("ERGEBNIS steht hier");
-    Ausgabe->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    text=new QLabel();
+    text->setText("Ergebnis:");
+    text->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+
+    Ans = Colored_Button("\" ERGEBNIS \"", QColor(Qt::white));        //"ERGEBNIS" mit dem berechneten String von Marcel ersetzen (=Ans-Funktion vom Taschenrechner)
 
 
     /*--------------- Buttons ---------------*/
@@ -66,7 +68,8 @@ Widget::Widget():ui(new Ui::Widget)
     layout = new QGridLayout;
 
     layout->addWidget(Eingabetext, 0, 0, 1, 4);    // zeile, spalte, höhe, breite
-    layout->addWidget(Ausgabe, 1, 1, 1, 2);
+    layout->addWidget(text, 1, 0, 1, 2);
+    layout->addWidget(Ans, 1, 1, 1, 2);
 
     layout->addWidget(k_auf, 2, 0);
     layout->addWidget(k_zu, 2, 1);

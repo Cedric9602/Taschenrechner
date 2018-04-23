@@ -22,7 +22,8 @@ class Widget : public QWidget{
     Q_OBJECT
 
     private:    QLineEdit *Eingabetext;
-                QLabel *Ausgabe;
+                QLabel *text;
+                QPushButton *Ans;
 
                 QGridLayout *layout;
 
