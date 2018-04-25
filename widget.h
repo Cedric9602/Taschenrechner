@@ -10,7 +10,38 @@
 #include<QLabel>
 #include<QGridLayout>
 
+#include <string>
+#include <vector>
+#include <math.h>
+
+using namespace std;
+
+/*
+#include "stdafx.h"
+#include<iostream>
+#include<fstream>
+
+#include <memory>
+
+
+#include <forward_list>
+
+*/
+
 QPushButton *Colored_Button(QString text, QColor color);
+
+struct Zeichen {
+    string Art;
+    double Zahl;
+    char Operand;
+};
+
+vector<Zeichen> Aufteilen(string S);
+double Rechnen(vector<Zeichen> V);
+bool Klammern(vector<Zeichen> V);
+bool Wurzel(vector<Zeichen> V);
+
+double Rechenfunktion(string S);
 
 
 namespace Ui {
@@ -58,29 +89,12 @@ class Widget : public QWidget{
 
     public slots:
 
-        void zahl0_clicked();
-        void zahl1_clicked();
-        void zahl2_clicked();
-        void zahl3_clicked();
-        void zahl4_clicked();
-        void zahl5_clicked();
-        void zahl6_clicked();
-        void zahl7_clicked();
-        void zahl8_clicked();
-        void zahl9_clicked();
-
-        void k_auf_clicked();
-        void k_zu_clicked();
-        void wurzel_clicked();
-        void potenz_clicked();
-        void komma_clicked();
-        void add_clicked();
-        void sub_clicked();
-        void mult_clicked();
-        void div_clicked();
+        void button_clicked();
 
         void DEL_clicked();
         void AC_clicked();
+
+        void calc_clicked();
 };
 
 #endif // WIDGET_H
