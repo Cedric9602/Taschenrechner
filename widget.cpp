@@ -148,8 +148,7 @@ QPushButton *Colored_Button(QString text, QColor color) {
 }
 
 void Widget::zahl0_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "0");
     Eingabetext->setText(a);
@@ -157,8 +156,7 @@ void Widget::zahl0_clicked(){
 }
 
 void Widget::zahl1_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "1");
     Eingabetext->setText(a);
@@ -166,8 +164,7 @@ void Widget::zahl1_clicked(){
 }
 
 void Widget::zahl2_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "2");
     Eingabetext->setText(a);
@@ -175,8 +172,7 @@ void Widget::zahl2_clicked(){
 }
 
 void Widget::zahl3_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "3");
     Eingabetext->setText(a);
@@ -184,8 +180,7 @@ void Widget::zahl3_clicked(){
 }
 
 void Widget::zahl4_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "4");
     Eingabetext->setText(a);
@@ -193,8 +188,7 @@ void Widget::zahl4_clicked(){
 }
 
 void Widget::zahl5_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "5");
     Eingabetext->setText(a);
@@ -202,8 +196,7 @@ void Widget::zahl5_clicked(){
 }
 
 void Widget::zahl6_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "6");
     Eingabetext->setText(a);
@@ -211,8 +204,7 @@ void Widget::zahl6_clicked(){
 }
 
 void Widget::zahl7_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "7");
     Eingabetext->setText(a);
@@ -220,8 +212,7 @@ void Widget::zahl7_clicked(){
 }
 
 void Widget::zahl8_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "8");
     Eingabetext->setText(a);
@@ -229,8 +220,7 @@ void Widget::zahl8_clicked(){
 }
 
 void Widget::zahl9_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "9");
     Eingabetext->setText(a);
@@ -238,8 +228,7 @@ void Widget::zahl9_clicked(){
 }
 
 void Widget::k_auf_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     a = Eingabetext->text();
     a.insert(pos, "(");
     Eingabetext->setText(a);
@@ -247,8 +236,7 @@ void Widget::k_auf_clicked(){
 }
 
 void Widget::k_zu_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, ")");
     Eingabetext->setText(a);
@@ -256,8 +244,7 @@ void Widget::k_zu_clicked(){
 }
 
 void Widget::wurzel_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "sqrt(");
     Eingabetext->setText(a);
@@ -265,8 +252,7 @@ void Widget::wurzel_clicked(){
 }
 
 void Widget::potenz_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "^(");
     Eingabetext->setText(a);
@@ -274,8 +260,7 @@ void Widget::potenz_clicked(){
 }
 
 void Widget::komma_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, ".");
     Eingabetext->setText(a);
@@ -283,8 +268,7 @@ void Widget::komma_clicked(){
 }
 
 void Widget::add_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "+");
     Eingabetext->setText(a);
@@ -292,8 +276,7 @@ void Widget::add_clicked(){
 }
 
 void Widget::sub_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "-");
     Eingabetext->setText(a);
@@ -309,8 +292,7 @@ void Widget::mult_clicked(){
 }
 
 void Widget::div_clicked(){
-    int pos;
-    pos = Eingabetext->cursorPosition();
+    int pos = Eingabetext->cursorPosition();
     QString a = Eingabetext->text();
     a.insert(pos, "/");
     Eingabetext->setText(a);
