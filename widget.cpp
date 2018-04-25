@@ -19,55 +19,68 @@ Widget::Widget():ui(new Ui::Widget)
 
     /*--------------- Buttons ---------------*/
     zahl0 = Colored_Button("0", QColor(Qt::lightGray));
+    connect(zahl0, SIGNAL(clicked()), this, SLOT(zahl0_clicked()));
 
     zahl1 = Colored_Button("1", QColor(Qt::lightGray));
+    connect(zahl1, SIGNAL(clicked()), this, SLOT(zahl1_clicked()));
 
     zahl2 = Colored_Button("2", QColor(Qt::lightGray));
+    connect(zahl2, SIGNAL(clicked()), this, SLOT(zahl2_clicked()));
 
     zahl3 = Colored_Button("3", QColor(Qt::lightGray));
+    connect(zahl3, SIGNAL(clicked()), this, SLOT(zahl3_clicked()));
 
     zahl4 = Colored_Button("4", QColor(Qt::lightGray));
+    connect(zahl4, SIGNAL(clicked()), this, SLOT(zahl4_clicked()));
 
     zahl5 = Colored_Button("5", QColor(Qt::lightGray));
+    connect(zahl5, SIGNAL(clicked()), this, SLOT(zahl5_clicked()));
 
     zahl6 = Colored_Button("6", QColor(Qt::lightGray));
+    connect(zahl6, SIGNAL(clicked()), this, SLOT(zahl6_clicked()));
 
     zahl7 = Colored_Button("7", QColor(Qt::lightGray));
+    connect(zahl7, SIGNAL(clicked()), this, SLOT(zahl7_clicked()));
 
     zahl8 = Colored_Button("8", QColor(Qt::lightGray));
+    connect(zahl8, SIGNAL(clicked()), this, SLOT(zahl8_clicked()));
 
     zahl9 = Colored_Button("9", QColor(Qt::lightGray));
+    connect(zahl9, SIGNAL(clicked()), this, SLOT(zahl9_clicked()));
 
 
     k_auf = Colored_Button("(", QColor(Qt::gray));
+    connect(k_auf, SIGNAL(clicked()), this, SLOT(k_auf_clicked()));
 
     k_zu = Colored_Button(")", QColor(Qt::gray));
+    connect(k_zu, SIGNAL(clicked()), this, SLOT(k_zu_clicked()));
 
     wurzel = Colored_Button("sqrt(", QColor(Qt::gray));
+    connect(wurzel, SIGNAL(clicked()), this, SLOT(wurzel_clicked()));
 
     potenz = Colored_Button("^(", QColor(Qt::gray));
+    connect(potenz, SIGNAL(clicked()), this, SLOT(potenz_clicked()));
 
     DEL = Colored_Button("DEL", QColor(Qt::darkCyan));
+    connect(DEL, SIGNAL(clicked()), this, SLOT(DEL_clicked()));
 
     AC = Colored_Button("AC", QColor(Qt::darkCyan));
+    connect(AC, SIGNAL(clicked()), this, SLOT(AC_clicked()));
 
     komma = Colored_Button(",", QColor(Qt::gray));
+    connect(komma, SIGNAL(clicked()), this, SLOT(komma_clicked()));
 
-<<<<<<< HEAD
     add = Colored_Button("+", QColor(Qt::gray));
+    connect(add, SIGNAL(clicked()), this, SLOT(add_clicked()));
 
     sub = Colored_Button("-", QColor(Qt::gray));
-=======
-    QLabel *Label = new QLabel(this);
-    Label->setGeometry(20,170,100,20);
-    Label->setText("Hallo");
-//asdasd
-//test
->>>>>>> test
+    connect(sub, SIGNAL(clicked()), this, SLOT(sub_clicked()));
 
     mult = Colored_Button("*", QColor(Qt::gray));
+    connect(mult, SIGNAL(clicked()), this, SLOT(mult_clicked()));
 
     div = Colored_Button("/", QColor(Qt::gray));
+    connect(div, SIGNAL(clicked()), this, SLOT(div_clicked()));
 
     calc = Colored_Button("=", QColor(Qt::gray));
 
@@ -133,5 +146,146 @@ QPushButton *Colored_Button(QString text, QColor color) {
     return button;
 }
 
+void Widget::zahl0_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("0");
+    Eingabetext->setText(a);
+}
 
+void Widget::zahl1_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("1");
+    Eingabetext->setText(a);
+}
 
+void Widget::zahl2_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("2");
+    Eingabetext->setText(a);
+}
+
+void Widget::zahl3_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("3");
+    Eingabetext->setText(a);
+}
+
+void Widget::zahl4_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("4");
+    Eingabetext->setText(a);
+}
+
+void Widget::zahl5_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("5");
+    Eingabetext->setText(a);
+}
+
+void Widget::zahl6_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("6");
+    Eingabetext->setText(a);
+}
+
+void Widget::zahl7_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("7");
+    Eingabetext->setText(a);
+}
+
+void Widget::zahl8_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("8");
+    Eingabetext->setText(a);
+}
+
+void Widget::zahl9_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("9");
+    Eingabetext->setText(a);
+}
+
+void Widget::k_auf_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("(");
+    Eingabetext->setText(a);
+}
+
+void Widget::k_zu_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append(")");
+    Eingabetext->setText(a);
+}
+
+void Widget::wurzel_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("sqrt(");
+    Eingabetext->setText(a);
+}
+
+void Widget::potenz_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("^(");
+    Eingabetext->setText(a);
+}
+
+void Widget::komma_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append(",");
+    Eingabetext->setText(a);
+}
+
+void Widget::add_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("+");
+    Eingabetext->setText(a);
+}
+
+void Widget::sub_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("-");
+    Eingabetext->setText(a);
+}
+
+void Widget::mult_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("*");
+    Eingabetext->setText(a);
+}
+
+void Widget::div_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a.append("/");
+    Eingabetext->setText(a);
+}
+
+void Widget::DEL_clicked(){
+    QString a;
+    a = Eingabetext->text();
+    a = a.left(a.length() - 1);
+    Eingabetext->setText(a);
+}
+
+void Widget::AC_clicked(){
+    Eingabetext->setText("");
+}
