@@ -281,10 +281,7 @@ void Widget::div_clicked(){
 }
 
 void Widget::DEL_clicked(){
-    QString a;
-    a = Eingabetext->text();
-    a = a.left(a.length() - 1);
-    Eingabetext->setText(a);
+    Eingabetext->backspace();
 }
 
 void Widget::AC_clicked(){
