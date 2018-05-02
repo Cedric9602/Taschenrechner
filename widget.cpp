@@ -135,6 +135,8 @@ Widget::~Widget()
 
 
 
+/*--------------- Funktionen ---------------*/
+
 QPushButton *Colored_Button(QString text, QColor color) {
     QPushButton *button = new QPushButton(text);
     button->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
@@ -156,59 +158,32 @@ void Widget::button_clicked(){
     QString str = button->text();
     a.insert(pos, str);
     Eingabetext->setText(a);
+
+    if(Eingabetext->text().at(pos) == 's') { pos+=4; }
+    if(Eingabetext->text().at(pos) == '^') { pos+=1; }
+
     Eingabetext->setCursorPosition(pos+1);
 }
+
 
 void Widget::DEL_clicked(){
     Eingabetext->backspace();
 }
 
+
 void Widget::AC_clicked(){
     Eingabetext->setText("");
 }
 
+
 void Widget::calc_clicked(){
     string eingabe = Eingabetext->text().toStdString();
-    double ergebnis = Rechenfunktion(eingabe);
-
-    Ans->setText(QString::number(ergebnis));
+    if(Str_Korrekt(Aufteilen(eingabe))){
+        double ergebnis = Rechenfunktion(eingabe);
+        Ans->setText(QString::number(ergebnis));
+    }
+    else{ Ans->setText("ERROR"); }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 bool Str_Korrekt(vector<Zeichen> V) {
@@ -216,68 +191,24 @@ bool Str_Korrekt(vector<Zeichen> V) {
     int16_t Klammern = 0;
     bool Zahl = false;
 
-
-
-    for (auto i = 0; i < V.size(); i++) {
-
-
-//Klammer Check
-        if (V.at(i).Operand == '(') {
-            Klammern++;
-        }
-        if (V.at(i).Operand == ')') {
-            Klammern--;
-        }
-        if (Klammern < 0) {
-            Error = true;
-        }
+    for (auto i = 1; i < (V.size() - 1); i++) {           //Klammer Check
+        if (V.at(i).Operand == '(') { Klammern++; }
+        if (V.at(i).Operand == ')') { Klammern--; }
+        if (Klammern < 0) { Error = true; }
 
 //Zeichen Check
-        if ((V.at(i).Operand == '(')|| (V.at(i).Operand == ')')|| (V.at(i).Operand == '+')|| (V.at(i).Operand == '*')|| (V.at(i).Operand == '/')|| (V.at(i).Operand == '-')|| (V.at(i).Operand == 's')|| (V.at(i).Operand == '^')|| (V.at(i).Operand == '#')){
-
-        }
+        if ((V.at(i).Operand == '(')|| (V.at(i).Operand == ')')|| (V.at(i).Operand == '+')|| (V.at(i).Operand == '*')|| (V.at(i).Operand == '/')|| (V.at(i).Operand == '-')|| (V.at(i).Operand == 's')|| (V.at(i).Operand == '^')|| (V.at(i).Operand == '#')){ }
         else{ Error = true; }
 
 //Auf min 1 zahl überprüfen
-
-        if (V.at(i).Art == "Zahl") {
-            Zahl = true;
-        }
-
-
-
-
-
+        if (V.at(i).Art == "Zahl") { Zahl = true; }
     }
 
-    if (Klammern != 0) {
-        Error = true;
-    }
-
-    if (Zahl == false) {
-        Error = true;
-        }
-
+    if (Klammern != 0) { Error = true; }
+    if (Zahl == false) { Error = true; }
 
     return !Error;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 double Rechenfunktion(string S) {
@@ -290,16 +221,12 @@ vector<Zeichen> Aufteilen(string str) {
     for (uint64_t i = 0; i < str.size(); i++) {
 
         if ((str.at(i) == 's') && (str.at(i + 1) == 'q') && (str.at(i + 2) == 'r') && (str.at(i + 3) == 't') && (str.at(i + 4) == '(')) {
-
             s.push_back('s');
             s.push_back('(');
             i += 4;
-
         }
-        else {
-            s.push_back(str.at(i));
-        }
-
+        else if(str.at(i) == ','){ s.push_back('.'); }
+        else { s.push_back(str.at(i)); }
     }
 
     s = '(' + s + ')';

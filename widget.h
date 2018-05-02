@@ -16,17 +16,6 @@
 
 using namespace std;
 
-/*
-#include "stdafx.h"
-#include<iostream>
-#include<fstream>
-
-#include <memory>
-
-
-#include <forward_list>
-
-*/
 
 QPushButton *Colored_Button(QString text, QColor color);
 
@@ -40,6 +29,7 @@ vector<Zeichen> Aufteilen(string S);
 double Rechnen(vector<Zeichen> V);
 bool Klammern(vector<Zeichen> V);
 bool Wurzel(vector<Zeichen> V);
+bool Str_Korrekt(vector<Zeichen> V);
 
 double Rechenfunktion(string S);
 
