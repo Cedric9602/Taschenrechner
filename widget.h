@@ -27,8 +27,6 @@ struct Zeichen {
 
 vector<Zeichen> Aufteilen(string S);
 double Rechnen(vector<Zeichen> V);
-bool Klammern(vector<Zeichen> V);
-bool Wurzel(vector<Zeichen> V);
 bool Str_Korrekt(vector<Zeichen> V);
 
 double Rechenfunktion(string S);

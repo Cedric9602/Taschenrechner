@@ -196,11 +196,11 @@ bool Str_Korrekt(vector<Zeichen> V) {
         if (V.at(i).Operand == ')') { Klammern--; }
         if (Klammern < 0) { Error = true; }
 
-//Zeichen Check
+        //Zeichen Check
         if ((V.at(i).Operand == '(')|| (V.at(i).Operand == ')')|| (V.at(i).Operand == '+')|| (V.at(i).Operand == '*')|| (V.at(i).Operand == '/')|| (V.at(i).Operand == '-')|| (V.at(i).Operand == 's')|| (V.at(i).Operand == '^')|| (V.at(i).Operand == '#')){ }
         else{ Error = true; }
 
-//Auf min 1 zahl überprüfen
+        //Auf min 1 zahl überprüfen
         if (V.at(i).Art == "Zahl") { Zahl = true; }
     }
 
@@ -237,28 +237,22 @@ vector<Zeichen> Aufteilen(string str) {
     string TmpZahl = "";
     double TmpDouble = 0;
     Zeichen TmpZeichen;
-
     string Operatoren = "+-/^(*)s";
-
-
     vector <Zeichen> Zerteilt;
 
-    //Durch String iterieren
 
+    //Durch String iterieren
     for (uint64_t i = 0; i < s.size(); i++) {
 
         //Zahlen erkennen
         if (((s.at(i) >= '0') && (s.at(i) <= '9')) || (s.at(i) == '.')) {
             letzteZahl = true;
 
-            if (letzteZahl == true) {
-                TmpZahl.push_back(s.at(i));
-            }
-            else {
-                TmpZahl = s.at(i);
-            }
+            if (letzteZahl == true) { TmpZahl.push_back(s.at(i)); }
+            else { TmpZahl = s.at(i); }
 
         }
+
         //keine Zahl mehr
         else if ((letzteZahl == true)) {
             letzteZahl = false;
@@ -291,11 +285,7 @@ vector<Zeichen> Aufteilen(string str) {
             TmpZeichen.Art = "";
             TmpZeichen.Zahl = 0;
             TmpZeichen.Operand = '#';
-
-
         }
-
-
 
         //Operator erkennen
         if ((Operatoren.find(s.at(i))) != string::npos) {
@@ -310,7 +300,6 @@ vector<Zeichen> Aufteilen(string str) {
             TmpZeichen.Art = "";
             TmpZeichen.Zahl = 0;
             TmpZeichen.Operand = '#';
-
         }
     }
 
@@ -335,7 +324,6 @@ double Rechnen(vector<Zeichen> V) {
 
     while (vect.size() >1) {
 
-
         //Wurzel berechnen
         Rechnung = false;
         for (auto i = 0; i < vect.size()-1; i++) {
@@ -352,22 +340,19 @@ double Rechnen(vector<Zeichen> V) {
                 TmpZeichen.Operand = '#';
 
                 i++;
-
-            }
-            else {
-                helpvect.push_back(vect.at(i));
             }
 
+            else { helpvect.push_back(vect.at(i)); }
         }
 
         helpvect.push_back(vect.back());
+
         if (Rechnung) {
             vect = helpvect;
             Rechnung = false;
         }
+
         helpvect.clear();
-
-
 
 
         //Potenz berechnen
@@ -386,25 +371,22 @@ double Rechnen(vector<Zeichen> V) {
                     TmpZeichen.Operand = '#';
 
                     i += 2;
+                }
 
-                }
-                else {
-                    helpvect.push_back(vect.at(i));
-                }
+                else { helpvect.push_back(vect.at(i)); }
             }
-            else {
-                helpvect.push_back(vect.at(i));
-            }
+
+            else { helpvect.push_back(vect.at(i)); }
         }
+
         helpvect.push_back(vect.back());
+
         if (Rechnung) {
             vect = helpvect;
             Rechnung = false;
         }
+
         helpvect.clear();
-
-
-
 
 
         //klammern suchen
@@ -419,14 +401,11 @@ double Rechnen(vector<Zeichen> V) {
                         KVorne = vorne;
                         KHinten = hinten;
                         break;
-
                     }
                 }
             }
 
-            if (eins == false) {
-                break;
-            }
+            if (eins == false) { break; }
         }
 
 
@@ -451,24 +430,20 @@ double Rechnen(vector<Zeichen> V) {
             TmpZeichen.Art = "";
             TmpZeichen.Zahl = 0;
             TmpZeichen.Operand = '#';
-
         }
 
         if ((KHinten - KVorne) > 2) {
+
             ZwischenErg = vect.at(KVorne + 1).Zahl;
 
             for (auto i = KVorne+1; i < KHinten-2; i++) {
-
                 switch (vect.at(i+1).Operand) {
-
                 case '+': ZwischenErg = ZwischenErg + vect.at(i + 2).Zahl; break;
                 case '-': ZwischenErg = ZwischenErg - vect.at(i + 2).Zahl; break;
                 case '*': ZwischenErg = ZwischenErg * vect.at(i + 2).Zahl; break;
                 case '/': ZwischenErg = ZwischenErg / vect.at(i + 2).Zahl; break;
                 }
-
             }
-
 
             TmpZeichen.Art = "Zahl";
             TmpZeichen.Operand = '#';
@@ -479,47 +454,16 @@ double Rechnen(vector<Zeichen> V) {
             TmpZeichen.Art = "";
             TmpZeichen.Zahl = 0;
             TmpZeichen.Operand = '#';
-
-
         }
 
 
         //nach Klammer
-
-        for (auto i = (KHinten + 1); i < vect.size(); i++) {
-            helpvect.push_back(vect.at(i));
-        }
-
+        for (auto i = (KHinten + 1); i < vect.size(); i++) { helpvect.push_back(vect.at(i)); }
         vect = helpvect;
         helpvect.clear();
-
-
     }
 
     return vect.at(0).Zahl;
 }
 
-
-bool Klammern(vector<Zeichen> V) {
-    bool out = false;
-    for (auto i = 0; i < V.size(); i++) {
-        if (V.at(i).Operand == ')') {
-            out = true;
-            break;
-        }
-    }
-    return out;
-}
-
-
-bool Wurzel(vector<Zeichen> V) {
-    bool out = false;
-    for (auto i = 0; i < V.size(); i++) {
-        if (V.at(i).Operand == 's') {
-            out = true;
-            break;
-        }
-    }
-    return out;
-}
 
