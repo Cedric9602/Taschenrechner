@@ -211,6 +211,56 @@ void Widget::calc_clicked(){
 
 
 
+bool Str_Korrekt(vector<Zeichen> V) {
+    bool Error = false;
+    int16_t Klammern = 0;
+    bool Zahl = false;
+
+
+
+    for (auto i = 0; i < V.size(); i++) {
+
+
+//Klammer Check
+        if (V.at(i).Operand == '(') {
+            Klammern++;
+        }
+        if (V.at(i).Operand == ')') {
+            Klammern--;
+        }
+        if (Klammern < 0) {
+            Error = true;
+        }
+
+//Zeichen Check
+        if ((V.at(i).Operand == '(')|| (V.at(i).Operand == ')')|| (V.at(i).Operand == '+')|| (V.at(i).Operand == '*')|| (V.at(i).Operand == '/')|| (V.at(i).Operand == '-')|| (V.at(i).Operand == 's')|| (V.at(i).Operand == '^')|| (V.at(i).Operand == '#')){
+
+        }
+        else{ Error = true; }
+
+//Auf min 1 zahl überprüfen
+
+        if (V.at(i).Art == "Zahl") {
+            Zahl = true;
+        }
+
+
+
+
+
+    }
+
+    if (Klammern != 0) {
+        Error = true;
+    }
+
+    if (Zahl == false) {
+        Error = true;
+        }
+
+
+    return !Error;
+}
 
 
 
